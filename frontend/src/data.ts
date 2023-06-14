@@ -34,7 +34,7 @@ export const sample_items: Item[] = [
   }
 ]
 
-const sample_tags:Tag[] = [
+export const sample_tags:Tag[] = [
   { name: 'All', count: 6 },
   { name: 'Pink', count: 2 },
   { name: 'Custom', count: 2 },
