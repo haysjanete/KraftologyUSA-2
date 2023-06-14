@@ -8,9 +8,9 @@ export const sample_items: Item[] = [
     price: 50,
     workTime: '2 Weeks',
     favorite: false,
-    origins: ['rhinestones', 'pastel'],
+    origins: ['Rhinestones', 'Pastel'],
     imageUrl: 'assets/pastelslim3.JPEG',
-    tags: ['rhinestone', 'pastel', 'cow print'],
+    tags: ['Rhinestones', 'Pastel'],
   },
   {
     id: '2',
@@ -20,7 +20,7 @@ export const sample_items: Item[] = [
     favorite: false,
     origins: ['pink', 'custom'],
     imageUrl: 'assets/pink3.JPEG',
-    tags: ['pink', 'custom', 'glitter'],
+    tags: ['Pink', 'Custom'],
   },
   {
     id: '3',
@@ -28,9 +28,9 @@ export const sample_items: Item[] = [
     price: 60,
     workTime: '3 Weeks',
     favorite: false,
-    origins: ['pink', 'custom'],
+    origins: ['Pink', 'Custom'],
     imageUrl: 'assets/bb2.PNG',
-    tags: ['pink', 'custom', 'uv reactive'],
+    tags: ['Pink', 'Custom'],
   }
 ]
 
