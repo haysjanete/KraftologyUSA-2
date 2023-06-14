@@ -1,4 +1,5 @@
 import {Item} from './app/shared/models/items';
+import {Tag} from './app/shared/models/Tag';
 
 export const sample_items: Item[] = [
   {
@@ -32,3 +33,12 @@ export const sample_items: Item[] = [
     tags: ['pink', 'custom', 'uv reactive'],
   }
 ]
+
+const sample_tags:Tag[] = [
+  { name: 'All', count: 6 },
+  { name: 'Pink', count: 2 },
+  { name: 'Custom', count: 2 },
+  { name: 'Rhinestones', count: 1 },
+  { name: 'Pastel', count: 1 },
+]
+
