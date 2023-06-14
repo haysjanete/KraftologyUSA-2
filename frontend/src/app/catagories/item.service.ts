@@ -12,4 +12,8 @@ export class ItemService {
   getAll():Item[ ]{
     return sample_items;
   }
+
+  getAllItemsBySearchTerm(searchTerm:string){
+    return this.getAll().filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()))
+  }
 }
