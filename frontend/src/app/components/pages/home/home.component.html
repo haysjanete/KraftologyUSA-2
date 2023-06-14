@@ -6,19 +6,14 @@
         <div class="name">
           {{ item.name }}
         </div>
-        <span class="favorite {{ item.favorite? ' ':'not'}}">
-          <3
-        </span>
-      </div>
       <div class="product-item-footer">
         <div class="origins">
           <span *ngFor="let origin of item.origins">
             {{origin}}
           </span>
         </div>
-
         <div class="work-time">
-          <span>Takes about: </span>
+          <span>🕒</span>
           {{ item.workTime }}
         </div>
         <div class="price">
@@ -27,6 +22,7 @@
           </span>
         </div>
       </div>
+    </div>
     </a>
   </li>
 </ul>
