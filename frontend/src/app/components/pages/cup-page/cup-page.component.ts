@@ -5,11 +5,11 @@ import { CupService } from 'src/app/services/cup-service';
 import { Cup } from 'src/app/shared/models/Cup';
 
 @Component({
-  selector: 'app-item-page',
-  templateUrl: './item-page.component.html',
-  styleUrls: ['./item-page.component.css']
+  selector: 'app-cup-page',
+  templateUrl: './cup-page.component.html',
+  styleUrls: ['./cup-page.component.css']
 })
-export class ItemPageComponent implements OnInit {
+export class CupPageComponent implements OnInit {
   cup!: Cup
   constructor(activatedRoute:ActivatedRoute, cupService:CupService, private cartService:CartService, private router:Router) {
     activatedRoute.params.subscribe((params) => {

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {sample_items, sample_tags} from 'src/data';
+import {sample_cups, sample_tags} from 'src/data';
 import {Cup} from '../shared/models/Cup';
 import { Tag } from '../shared/models/Tag';
 
@@ -11,11 +11,11 @@ export class CupService {
   constructor() { }
 
   getAll():Cup[ ]{
-    return sample_items;
+    return sample_cups;
   }
 
   getAllCupsBySearchTerm(searchTerm:string){
-    return this.getAll().filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()))
+    return this.getAll().filter(cup => cup.name.toLowerCase().includes(searchTerm.toLowerCase()))
   }
 
   getAllTags():Tag[]{
@@ -25,10 +25,10 @@ export class CupService {
   getAllCupsByTag(tag:string):Cup[]{
     return tag == "All"?
     this.getAll():
-    this.getAll().filter(item => item.tags?.includes(tag));
+    this.getAll().filter(cup => cup.tags?.includes(tag));
   }
 
-  getCupByID(itemId:string):Cup{
-    return this.getAll().find(item => item.id == itemId) ?? new Cup();
+  getCupByID(cupId:string):Cup{
+    return this.getAll().find(cup => cup.id == cupId) ?? new Cup();
   }
 }
