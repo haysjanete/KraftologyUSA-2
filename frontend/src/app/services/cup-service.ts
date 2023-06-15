@@ -14,7 +14,7 @@ export class CupService {
     return sample_items;
   }
 
-  getAllItemsBySearchTerm(searchTerm:string){
+  getAllCupsBySearchTerm(searchTerm:string){
     return this.getAll().filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()))
   }
 
@@ -22,13 +22,13 @@ export class CupService {
     return sample_tags;
   }
 
-  getAllItemsByTag(tag:string):Cup[]{
+  getAllCupsByTag(tag:string):Cup[]{
     return tag == "All"?
     this.getAll():
     this.getAll().filter(item => item.tags?.includes(tag));
   }
 
-  getItemByID(itemId:string):Cup{
+  getCupByID(itemId:string):Cup{
     return this.getAll().find(item => item.id == itemId) ?? new Cup();
   }
 }

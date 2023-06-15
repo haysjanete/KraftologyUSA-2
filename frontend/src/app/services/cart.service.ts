@@ -22,12 +22,14 @@ export class CartService {
   }
 
   removeFromCart(cupId: string):void{
-    this.cart.items = this.cart.items.filter(item => item.cup.id != cupId);
+    this.cart.items = this.cart.items
+    .filter(item => item.cup.id != cupId);
     this.setCartToLocalStorage();
   }
 
   changeQuantity(cupId:string, quantity:number){
-    let cartItem = this.cart.items.find(item => item.cup.id === cupId);
+    let cartItem = this.cart.items
+    .find(item => item.cup.id === cupId);
     if(!cartItem) return;
 
     cartItem.quantity = quantity;
