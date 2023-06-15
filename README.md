@@ -39,3 +39,10 @@
             2. Add  ts
             3. Add html
             4. Add css
+    8. Item Page
+        1. Add method to item service
+        2. Generate  Item Page Component
+            1. Add Route
+            2. Add ts
+            3. Add HTML
+            4. Add CSS
