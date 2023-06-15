@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from 'src/app/catagories/cart.service';
-import { ItemService } from 'src/app/catagories/item.service';
-import { Item } from 'src/app/shared/models/items';
+import { CupService } from 'src/app/catagories/cup-service';
+import { Cup } from 'src/app/shared/models/Cup';
 
 @Component({
   selector: 'app-item-page',
@@ -10,11 +10,11 @@ import { Item } from 'src/app/shared/models/items';
   styleUrls: ['./item-page.component.css']
 })
 export class ItemPageComponent implements OnInit {
-  item!: Item
-  constructor(activatedRoute:ActivatedRoute, itemService:ItemService, private cartService:CartService, private router:Router) {
+  cup!: Cup
+  constructor(activatedRoute:ActivatedRoute, cupService:CupService, private cartService:CartService, private router:Router) {
     activatedRoute.params.subscribe((params) => {
       if(params.id)
-      this.item = itemService.getItemByID(params.id);
+      this.cup = cupService.getItemByID(params.id);
     })
   }
 
@@ -22,7 +22,7 @@ export class ItemPageComponent implements OnInit {
   }
 
   addToCart(){
-    this.cartService.addToCart(this.item);
+    this.cartService.addToCart(this.cup);
     this.router.navigateByUrl('/cart-page');
   }
 }

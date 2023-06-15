@@ -1,25 +1,25 @@
 <div class="container">
-  <img [src]="item.imageUrl" [alt]="item.name"/>
+  <img [src]="cup.imageUrl" [alt]="cup.name"/>
 
   <div class="details">
     <div class="header">
       <span class="name">
-        {{item.name}}
+        {{cup.name}}
       </span>
     </div>
     <div class="tags">
-      <a *ngFor="let tag of item.tags" routerLink="/tag/{{tag}}">
+      <a *ngFor="let tag of cup.tags" routerLink="/tag/{{tag}}">
         {{tag}}
       </a>
     </div>
     <div class="work-time">
       <span>
-        Time needed to complete <strong>{{item.workTime}}</strong>
+        Time needed to complete <strong>{{cup.workTime}}</strong>
       </span>
     </div>
     <div class="price">
       <span>
-        {{ item.price | currency }}
+        {{ cup.price | currency }}
       </span>
     </div>
     <button (click)="addToCart()">Add To Cart</button>

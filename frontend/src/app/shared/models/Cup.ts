@@ -1,4 +1,4 @@
-export class Item{
+export class Cup{
   id!:string;
   name!:string;
   price!:number;

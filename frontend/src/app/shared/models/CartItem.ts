@@ -1,7 +1,7 @@
-import { Item } from "./items";
+import { Cup } from "./Cup";
 
 export class CartItem{
-  constructor(public item:Item){ }
+  constructor(public cup:Cup){ }
   quantity:number = 1;
-  price: number = this.item.price;
+  price: number = this.cup.price;
 }

@@ -1,7 +1,7 @@
-import {Item} from './app/shared/models/items';
+import {Cup} from './app/shared/models/Cup';
 import {Tag} from './app/shared/models/Tag';
 
-export const sample_items: Item[] = [
+export const sample_items: Cup[] = [
   {
     id: '1',
     name: 'Rhinestone Tumbler',

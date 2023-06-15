@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import {sample_items, sample_tags} from 'src/data';
-import {Item} from '../shared/models/items';
+import {Cup} from '../shared/models/Cup';
 import { Tag } from '../shared/models/Tag';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ItemService {
+export class CupService {
 
   constructor() { }
 
-  getAll():Item[ ]{
+  getAll():Cup[ ]{
     return sample_items;
   }
 
@@ -22,13 +22,13 @@ export class ItemService {
     return sample_tags;
   }
 
-  getAllItemsByTag(tag:string):Item[]{
+  getAllItemsByTag(tag:string):Cup[]{
     return tag == "All"?
     this.getAll():
     this.getAll().filter(item => item.tags?.includes(tag));
   }
 
-  getItemByID(itemId:string):Item{
-    return this.getAll().find(item => item.id == itemId) ?? new Item();
+  getItemByID(itemId:string):Cup{
+    return this.getAll().find(item => item.id == itemId) ?? new Cup();
   }
 }
