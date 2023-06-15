@@ -1,26 +1,26 @@
 <app-search></app-search>
 <app-tags></app-tags>
 <ul>
-  <li *ngFor="let item of items">
-    <a routerLink="/item/{{item.id}}">
-      <img [src]="item.imageUrl" [alt]="item.name"/>
+  <li *ngFor="let cup of cups">
+    <a routerLink="/cup/{{cup.id}}">
+      <img [src]="cup.imageUrl" [alt]="cup.name"/>
       <div class="content">
         <div class="name">
-          {{ item.name }}
+          {{ cup.name }}
         </div>
-      <div class="product-item-footer">
+      <div class="product-cup-footer">
         <div class="origins">
-          <span *ngFor="let origin of item.origins">
+          <span *ngFor="let origin of cup.origins">
             {{origin}}
           </span>
         </div>
         <div class="work-time">
           <span>🕒</span>
-          {{ item.workTime }}
+          {{ cup.workTime }}
         </div>
         <div class="price">
           <span>
-            {{ item.price | currency }}
+            {{ cup.price | currency }}
           </span>
         </div>
       </div>

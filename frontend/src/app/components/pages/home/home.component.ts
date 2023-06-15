@@ -10,15 +10,15 @@ import { Cup } from 'src/app/shared/models/Cup';
 })
 export class HomeComponent {
 
-  items:Cup[] = [];
+  cups:Cup[] = [];
   constructor(private cupService:CupService, activatedRoute:ActivatedRoute) {
     activatedRoute.params.subscribe((params) => {
       if(params.searchTerm)
-      this.items = this.cupService.getAllCupsBySearchTerm(params.searchTerm);
+      this.cups = this.cupService.getAllCupsBySearchTerm(params.searchTerm);
       else if(params.tag)
-      this.items = this.cupService.getAllCupsByTag(params.tag);
+      this.cups = this.cupService.getAllCupsByTag(params.tag);
       else
-      this.items = cupService.getAll();
+      this.cups = cupService.getAll();
     })
   }
 
