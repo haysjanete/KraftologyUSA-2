@@ -28,7 +28,7 @@ export class CupService {
     this.getAll().filter(cup => cup.tags?.includes(tag));
   }
 
-  getCupByID(cupId:string):Cup{
+  getCupById(cupId:string):Cup{
     return this.getAll().find(cup => cup.id == cupId) ?? new Cup();
   }
 }

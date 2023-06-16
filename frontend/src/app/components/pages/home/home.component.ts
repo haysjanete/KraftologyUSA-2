@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CupService } from 'src/app/services/cup-service'
+import { CupService } from 'src/app/services/cup.service'
 import { Cup } from 'src/app/shared/models/Cup';
 
 @Component({

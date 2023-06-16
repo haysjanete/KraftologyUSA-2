@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CupService } from 'src/app/services/cup-service';
+import { CupService } from 'src/app/services/cup.service';
 import { Tag } from 'src/app/shared/models/Tag';
 
 @Component({

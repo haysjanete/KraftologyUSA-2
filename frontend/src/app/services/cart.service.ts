@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Cart } from '../shared/models/Cart';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Cup } from '../shared/models/Cup';
+import { Cart } from '../shared/models/Cart';
 import { CartItem } from '../shared/models/CartItem';
+import { Cup } from '../shared/models/Cup';
+
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class CartService {
   constructor() { }
 
   addToCart(cup:Cup):void{
-    let cartItem = this.cart.items.find(item => item.cup.id === cup.id)
+    let cartItem = this.cart.items.find(item => item.cup.id === cup.id);
     if(cartItem)
       return;
 
@@ -23,13 +24,12 @@ export class CartService {
 
   removeFromCart(cupId: string):void{
     this.cart.items = this.cart.items
-    .filter(item => item.cup.id != cupId);
+      .filter(item => item.cup.id != cupId);
     this.setCartToLocalStorage();
   }
 
   changeQuantity(cupId:string, quantity:number){
-    let cartItem = this.cart.items
-    .find(item => item.cup.id === cupId);
+    let cartItem = this.cart.items.find(item => item.cup.id === cupId);
     if(!cartItem) return;
 
     cartItem.quantity = quantity;

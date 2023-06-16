@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
-import { CupService } from 'src/app/services/cup-service';
+import { CupService } from 'src/app/services/cup.service';
 import { Cup } from 'src/app/shared/models/Cup';
 
 @Component({
@@ -10,11 +10,11 @@ import { Cup } from 'src/app/shared/models/Cup';
   styleUrls: ['./cup-page.component.css']
 })
 export class CupPageComponent implements OnInit {
-  cup!: Cup
+  cup!: Cup;
   constructor(activatedRoute:ActivatedRoute, cupService:CupService, private cartService:CartService, private router:Router) {
     activatedRoute.params.subscribe((params) => {
       if(params.id)
-      this.cup = cupService.getCupByID(params.id);
+      this.cup = cupService.getCupById(params.id);
     })
   }
 
