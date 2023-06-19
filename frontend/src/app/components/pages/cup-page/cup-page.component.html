@@ -1,4 +1,9 @@
-<div class="container">
+<app-not-found
+  [visible]="!cup.id"
+  notFoundMessage="Item Not Found"
+  resetLinkText="Back To Homepage">
+</app-not-found>
+<div *ngIf="cup.id" class="container">
   <img [src]="cup.imageUrl" [alt]="cup.name"/>
 
   <div class="details">
