@@ -14,7 +14,9 @@ export class CupPageComponent implements OnInit {
   constructor(activatedRoute:ActivatedRoute, cupService:CupService, private cartService:CartService, private router:Router) {
     activatedRoute.params.subscribe((params) => {
       if(params.id)
-      this.cup = cupService.getCupById(params.id);
+      cupService.getCupById(params.id).subscribe(serverCup => {
+        this.cup = serverCup;
+      });
     })
   }
 

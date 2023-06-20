@@ -2,33 +2,36 @@ import { Injectable } from '@angular/core';
 import {sample_cups, sample_tags} from 'src/data';
 import {Cup} from '../shared/models/Cup';
 import { Tag } from '../shared/models/Tag';
+import { CUPS_BY_ID_URL, CUPS_BY_SEARCH_URL, CUPS_BY_TAG_URL, CUPS_TAGS_URL, CUPS_URL } from '../shared/constants/urls';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CupService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
-  getAll():Cup[ ]{
-    return sample_cups;
+  getAll(): Observable<Cup[ ]>{
+    return this.http.get<Cup[]>(CUPS_URL);
   }
 
   getAllCupsBySearchTerm(searchTerm:string){
-    return this.getAll().filter(cup => cup.name.toLowerCase().includes(searchTerm.toLowerCase()))
+    return this.http.get<Cup[]>(CUPS_BY_SEARCH_URL + searchTerm);
   }
 
-  getAllTags():Tag[]{
-    return sample_tags;
+  getAllTags(): Observable<Tag[]>{
+    return this.http.get<Tag[]>(CUPS_TAGS_URL);
   }
 
-  getAllCupsByTag(tag:string):Cup[]{
-    return tag == "All"?
+  getAllCupsByTag(tag:string): Observable<Cup[]>{
+    return tag === "All" ?
     this.getAll():
-    this.getAll().filter(cup => cup.tags?.includes(tag));
+    this.http.get<Cup[]>(CUPS_BY_TAG_URL + tag);
   }
 
-  getCupById(cupId:string):Cup{
-    return this.getAll().find(cup => cup.id == cupId) ?? new Cup();
+  getCupById(cupId:string): Observable<Cup>{
+    return this.http.get<Cup>(CUPS_BY_ID_URL + cupId);
   }
 }
