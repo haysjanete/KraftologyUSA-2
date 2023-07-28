@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:500';
+const BASE_URL = 'http://localhost:5000';
 
 export const CUPS_URL = BASE_URL + '/api/cups';
 export const CUPS_TAGS_URL = CUPS_URL + '/tags';
