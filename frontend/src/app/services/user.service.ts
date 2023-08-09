@@ -16,14 +16,19 @@ export class UserService {
     this.userObservable = this.userSubject.asObservable();
   }
 
+  public get currentUser():User{
+    return this.userSubject.value;
+  }
+
   login(userLogin:IUserLogin):Observable<User>{
-    return this.http.post<User>(USER_LOGIN_URL, userLogin).pipe(tap({
-      next: (user) =>{
-        this.userSubject.next(user);
-        this.toastrService.success(
-          `Welcome to KraftologyUSA ${user.name}!`,
-          'Login Successful'
-        )
+    return this.http.post<User>(USER_LOGIN_URL, userLogin).pipe(
+      tap({
+        next: (user) =>{
+          this.userSubject.next(user);
+          this.toastrService.success(
+            `Welcome to KraftologyUSA ${user.name}!`,
+            'Login Successful'
+          )
       },
       error: (errorResponse) => {
         this.toastrService.error(errorResponse.error,  'Login Failed');
